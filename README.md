@@ -21,8 +21,7 @@ The game continues until the Undercover is discovered or only two players remain
 ✅ Win conditions:
 - Citizens win if the Undercover is eliminated
 - Undercover wins if only two players remain  
-  ✅ Full restart system (new roles + new words)  
-  ✅ Floating SnackBars for better UX
+
 
 ---
 
@@ -62,13 +61,6 @@ flutter run
 ### 🏁 Game Over Screen
 <img src="screenshots/game_over.png" alt="Game Over" width="300"/>
 
----
-
-## 💡 Future Improvements
-- “Show My Word” reminder button during rounds
-- Animated transitions between phases
-- Round summary & game stats screen
-- Online multiplayer mode
 
 ---
 
