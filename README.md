@@ -1,16 +1,81 @@
-# undercover_game
+# Undercover Game Clone 🎭
+A simple local multiplayer party game built in **Flutter**, inspired by the popular “Undercover” social deduction game.
 
-A new Flutter project.
+---
 
-## Getting Started
+## 📱 Overview
 
-This project is a starting point for a Flutter application.
+Each player receives a secret word — one player is the **Undercover** with a slightly different word.  
+Everyone describes their word (without saying it), then votes on who they suspect is the Undercover.  
+The game continues until the Undercover is discovered or only two players remain.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+✅ Player setup screen (3–12 players)  
+✅ Random role and word pair assignment  
+✅ Private role reveal per player  
+✅ Voting and elimination logic  
+✅ Tie handling (no elimination on tie)  
+✅ Win conditions:
+- Citizens win if the Undercover is eliminated
+- Undercover wins if only two players remain  
+  ✅ Full restart system (new roles + new words)  
+  ✅ Floating SnackBars for better UX
+
+---
+
+## 🛠 How to Run
+
+### Prerequisites
+- Flutter SDK (3.x+)
+- Xcode (for iOS) or Android Studio (for Android)
+- A physical/emulator device connected
+
+### Steps
+```bash
+# Clone this repository
+git clone https://github.com/<your-username>/undercover_game.git
+cd undercover_game
+
+# Get dependencies
+flutter pub get
+
+# Run on emulator or connected device
+flutter run
+```
+
+---
+
+## 📸 Screenshots
+
+Add 2–3 screenshots showing:
+1. Player setup screen
+2. Role distribution screen
+3. Game round (voting phase)
+
+Example:
+```
+/screenshots/
+ ┣ setup_screen.png
+ ┣ role_distribution.png
+ ┗ voting_phase.png
+```
+
+---
+
+## 💡 Future Improvements
+- “Show My Word” reminder button during rounds
+- Animated transitions between phases
+- Round summary & game stats screen
+- Online multiplayer mode
+
+---
+
+## 👨‍💻 Author
+**Oussama Hassine**  
+Master’s in AI & Informatics – University of Urbino Carlo Bo  
+[LinkedIn](https://www.linkedin.com/in/oussemahassine)
+
+---
