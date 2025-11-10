@@ -36,7 +36,7 @@ The game continues until the Undercover is discovered or only two players remain
 ### Steps
 ```bash
 # Clone this repository
-git clone https://github.com/<your-username>/undercover_game.git
+git clone https://github.com/oussemahassine/undercover_game.git
 cd undercover_game
 
 # Get dependencies
@@ -50,18 +50,17 @@ flutter run
 
 ## 📸 Screenshots
 
-Add 2–3 screenshots showing:
-1. Player setup screen
-2. Role distribution screen
-3. Game round (voting phase)
+### 🧍‍♂️ Player Setup Screen
+<img src="screenshots/player_setup.png" alt="Player Setup" width="300"/>
 
-Example:
-```
-/screenshots/
- ┣ setup_screen.png
- ┣ role_distribution.png
- ┗ voting_phase.png
-```
+### 🎭 Role Distribution Screen
+<img src="screenshots/role_distribution.png" alt="Role Distribution" width="300"/>
+
+### 🗳️ Voting Phase
+<img src="screenshots/voting.png" alt="Voting Phase" width="300"/>
+
+### 🏁 Game Over Screen
+<img src="screenshots/game_over.png" alt="Game Over" width="300"/>
 
 ---
 

@@ -9,13 +9,8 @@ class PlayerSetupScreen extends StatefulWidget {
 }
 
 class _PlayerSetupScreenState extends State<PlayerSetupScreen> {
-  // Controller for number of players input
   final TextEditingController _numPlayersController = TextEditingController();
-
-  // List of controllers for player name inputs
   List<TextEditingController> _nameControllers = [];
-
-  // Stores the chosen number of players
   int? _numPlayers;
 
   @override
@@ -27,7 +22,7 @@ class _PlayerSetupScreenState extends State<PlayerSetupScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Input: number of players
+            // 🧮 Number of players input
             TextField(
               controller: _numPlayersController,
               decoration: const InputDecoration(
@@ -37,22 +32,29 @@ class _PlayerSetupScreenState extends State<PlayerSetupScreen> {
               keyboardType: TextInputType.number,
               onChanged: (value) {
                 final n = int.tryParse(value);
-                // Only accept valid range between 3 and 12
-                if (n != null && n >= 3 && n <= 12) {
+
+                // ✅ If empty or invalid -> reset the state
+                if (n == null || n < 3 || n > 12) {
                   setState(() {
-                    _numPlayers = n;
-                    // Create a text controller for each player's name
-                    _nameControllers =
-                        List.generate(n, (_) => TextEditingController());
+                    _numPlayers = null;
+                    _nameControllers = [];
                   });
+                  return;
                 }
+
+                // ✅ Valid number -> regenerate controllers
+                setState(() {
+                  _numPlayers = n;
+                  _nameControllers =
+                      List.generate(n, (_) => TextEditingController());
+                });
               },
             ),
 
             const SizedBox(height: 16),
 
-            // Dynamically show name fields for each player
-            if (_numPlayers != null)
+            // 🧍‍♂️ Player name inputs (only shown when valid count)
+            if (_numPlayers != null && _numPlayers! >= 3 && _numPlayers! <= 12)
               Expanded(
                 child: ListView.builder(
                   itemCount: _numPlayers!,
@@ -71,26 +73,25 @@ class _PlayerSetupScreenState extends State<PlayerSetupScreen> {
                 ),
               ),
 
-            // Start Game Button
+            // 🚀 Start Game Button
             ElevatedButton(
               onPressed: _numPlayers == null
-                  ? null // Disabled if no player count entered
+                  ? null
                   : () {
-                // Collect all entered names
                 final names =
                 _nameControllers.map((c) => c.text.trim()).toList();
 
-                // Simple validation: ensure all names are filled
                 if (names.any((name) => name.isEmpty)) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Please enter all player names!'),
+                      behavior: SnackBarBehavior.floating,
+                      margin: EdgeInsets.all(16),
                     ),
                   );
                   return;
                 }
 
-                // Navigate to Role Distribution Screen
                 Navigator.push(
                   context,
                   MaterialPageRoute(
